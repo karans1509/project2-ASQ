@@ -1,35 +1,48 @@
 
   <div class="container">
-    <h1 class="text-center">Welcome To ASQ</h1>
-    <p class="text-center">A platform where you can get all your queries regarding your institution answered.</p>
-    <h3 class="text-center">Sign Up Now!</h3>
+
+    <div class="logo">
+
+      <img src="assets/images/LogoASQ.svg">
+
+    </div>
+    <h1 class="text-center">SIGN UP! IT'S FREE!</h1>
+    
     <form action="#">
       <div class="form-group">
-            <label for="first">First Name</label>
-            <input type="text" class="form-control" placeholder="" [(ngModel)]="first" name="first" required>
+            <!-- <label for="first">First Name</label> -->
+            <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="first" name="first" required>
       </div>
       <div class="form-group">
-            <label for="last">Last Name</label>
-            <input type="text" class="form-control" placeholder="" [(ngModel)]="last" name="last" required>
+            <!-- <label for="last">Last Name</label> -->
+            <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="last" name="last" required>
       </div>
+      
       <div class="form-group">
-        <a href="#" id="upload_widget_opener">Upload images</a>
-        <a href="#" id="profile" name="picUrl" ></a>
-      </div>
-      <div class="form-group">
-          <label for="email">Email address  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></label>
+          <!-- <label for="email">Email address  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></label> -->
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" 
           [(ngModel)]="email" name="email" required>
       </div>
       <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+         <!--  <label for="exampleInputPassword1">Password</label> -->
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" 
           [(ngModel)]="password" name="password" required>
         </div>
+
+        <div class="form-group">
+        <a href="#" id="upload_widget_opener">Upload Images</a>
+        <a href="#" id="profile" name="picUrl" ></a>
+      </div>
       <div>
         <!-- <p>{{ message }}</p> -->
       </div>
-        <button type="submit" class="btn btn-default" (click)="signMeUp()">Submit</button>
+        <button type="submit" class="btn btn-default" (click)="signMeUp()">SIGN UP</button>
+
+        <p>Already a User?</p>
+
+         <button type="submit" class="btn btn-default" (click)="signMeUp()">LOG IN</button>
     </form>
+
+
   </div>
 

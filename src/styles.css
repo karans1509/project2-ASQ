@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+.cloudinary-button{
+
+	background-color: #f7fafc;
+	font-family: 'Open Sans', sans-serif;
+	border-radius: 0px;
+	background: #f7fafc;
+	color:#0277bd;
+	border: 1px solid #0277bd;
+	width:60%;
+	text-align: center;
+	/*margin-left: 110px;	*/
+	
+	margin: 0 auto;
+
+	display: block;
+}
+
+.cloudinary-button:hover{
+
+	background: #0277bd;
+	color: #fff;
+	text-decoration: none;
+}
