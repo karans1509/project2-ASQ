@@ -4,7 +4,8 @@
 
 	background-color: #f7fafc;
 	max-width:600px;
-	margin: 0 auto;
+	margin: 20px auto;
+
 }
 
 .container .logo{
@@ -93,6 +94,7 @@ button:last-of-type{
 	margin: 0 auto;
 
 	display: block;
+	margin-bottom: 15px;
 }
 
 button:last-of-type:hover{
