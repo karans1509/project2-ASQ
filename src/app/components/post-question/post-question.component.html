@@ -1,0 +1,9 @@
+<a [routerLink]="['/questions']"> Back </a>
+<br>
+<h2 class="page-header">Post a Question here!</h2>
+<form (submit)="onAddSubmit()" >
+  <div class="form-group">
+    <input type="text" class="form-control" name="title" [(ngModel)]="title" required>  
+  </div>
+  <input type="submit" value="submit" class="btn btn-default">
+</form>

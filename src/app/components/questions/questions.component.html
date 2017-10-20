@@ -1,0 +1,5 @@
+<input type="text" [(ngModel)]="term">
+  <div *ngFor="let item of questions | filter : term ">
+  <h3><a [routerLink]="['/question/'+item.title]">Question : {{ item.title}}</a></h3>
+  <p>Posted By : {{ item.postedBy}}</p>
+  </div>
