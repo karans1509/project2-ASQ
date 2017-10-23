@@ -13,7 +13,7 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  questions:any;
+  questions = [];
 
   constructor(private firebaseService : FirebaseService, private afAuth: AngularFireAuth, private router: Router) { 
     // if(this.afAuth.auth.currentUser === null) {
@@ -23,8 +23,15 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.firebaseService.getQuestions().subscribe(questions => {
-      this.questions = questions;
-      // console.log(questions.keys[0]);
+      for(let i = questions.length -1 ; i >= 0 ; i--) {
+        let item = { id : '', postedBy : '' , title : '' , likes : 0 , dislikes : 0};
+        item.id = questions[i].key;
+        item.postedBy = questions[i].payload.val().postedBy;
+        item.title = questions[i].payload.val().title;
+        item.likes = questions[i].payload.val().likes;
+        item.dislikes = questions[i].payload.val().dislikes;
+        this.questions.push(item);
+      }
     })
   }
 }

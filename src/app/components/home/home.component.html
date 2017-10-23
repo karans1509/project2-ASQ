@@ -1,6 +1,6 @@
-<div class="home">
+<div class="home" *ngIf = "(currUser | async)">
  <cl-image public-id="{{profilePic}}" >
-    <cl-transformation width="100" height="100" gravity="auto" radius="max"  crop="fill">
+    <cl-transformation width="100" height="100" gravity="auto" radius="15"  crop="fill">
     </cl-transformation>
     <cl-transformation dpr="2.0"></cl-transformation>
     <!-- <cl-transformation overlay="cloudinary_icon" gravity="south_east" x="5" y="5" width="50" opacity="60" effect="brightness:200">
@@ -8,5 +8,5 @@
       <!-- <cl-transformation angle="10">
       </cl-transformation> -->
   </cl-image>
-  <h1> Hi {{name}}!</h1>
+  <h1> Hi {{name }}!</h1>
 </div>

@@ -1,5 +1,30 @@
-<!-- <div *ngIf = "question"> -->
+<div *ngIf = "question">
 <a [routerLink]="['/questions']">Go Back</a>
 <br> 
-<h2 class="page-header"></h2>
-<!-- </div> -->
+<br>
+<br>
+<cl-image public-id="{{question.photo}}" >
+    <cl-transformation width="100" height="100" gravity="auto" radius="10"  crop="fill">
+    </cl-transformation>
+</cl-image>
+<h2 class="page-header">Question : </h2>
+<h3> {{ question.title }} </h3>
+<p> By : {{ question.postedBy}} </p>
+<p></p>
+<button (click) = "incrLikes()"  class="likes">Like  </button><p>{{question.likes}}</p>
+<button (click) = "decrLikes()"  class="dislikes">Dislike </button><p>{{question.dislikes}} </p>
+<h3>Answers -</h3>
+<div class="answers" *ngIf = "answers">
+  <div *ngFor = "let ans of answers, let i=index" class="single">
+     <p>{{ans.postedBy}} : {{ ans.answer }}</p>
+     <button (click) = "incrVotes(i)" >Upvote</button><p>{{ans.upvotes}}</p>
+     <button (click) = "decrVotes(i)" >Downvote </button><p> {{ans.downvotes}} </p>
+  </div>
+</div>
+<form (submit) = "postAnswer()">
+  <div class="form-group"  >
+     <input type="text" class="form-control" name="newAnswer" [(ngModel)]="newAnswer"  required placeholder="Add an answer here...">
+  </div>
+  <input type="submit" value="Post" class="btn btn-default">
+</form>
+</div>

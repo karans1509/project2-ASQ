@@ -14,8 +14,7 @@ export class PostQuestionComponent implements OnInit {
   postedBy : any;
   user : firebase.User;
 
-  constructor( private afAuth : AngularFireAuth, 
-               private router : Router, 
+  constructor( private afAuth : AngularFireAuth, private router : Router, 
                private firebaseService:FirebaseService) { 
     if(this.afAuth.auth.currentUser === null ){
       // this.router.navigate(['/']);
@@ -24,7 +23,7 @@ export class PostQuestionComponent implements OnInit {
       this.postedBy = this.afAuth.auth.currentUser.displayName;
     }
     this.user = this.afAuth.auth.currentUser;
-    console.log(this.user)
+    // console.log(this.user)
   }
 
   ngOnInit() {
@@ -33,7 +32,10 @@ export class PostQuestionComponent implements OnInit {
   onAddSubmit() {
     let question = {
       title : this.title,
-      postedBy : this.postedBy
+      postedBy : this.postedBy,
+      likes : 0,
+      dislikes : 0,
+      photo : this.user.photoURL
     }
     this.firebaseService.newQuestion(question);
     this.router.navigate(['questions']);

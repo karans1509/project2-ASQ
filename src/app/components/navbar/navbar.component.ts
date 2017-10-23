@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import {Router, ActivatedRoute} from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,16 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class NavbarComponent implements OnInit {
   user : Observable<firebase.User>;
-
-  constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage: FlashMessagesService, private current : ActivatedRoute) { 
+  photo : any;
+  url : any;
+  
+  constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage: FlashMessagesService, private current : ActivatedRoute, private firebaseService : FirebaseService) { 
     this.user = this.afAuth.authState;
-    
+    this.firebaseService.getPic().subscribe(message => {
+      // console.log(message);
+      this.photo = message.photo;
+      console.log(this.photo);
+    })
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse ">
+<nav class="navbar navbar-inverse " *ngIf="(user | async)" >
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -16,7 +16,10 @@
         <li *ngIf="(user | async)"><a [routerLink]="['/post-question']" >Post a Question</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right ">
-          <li *ngIf="!(user | async)"><a [routerLink]="['/login']">Login</a></li>
+          <li><cl-image public-id="{{photo}}" >
+              <cl-transformation width="50" height="50" gravity="face" radius="10"  crop="thumb">
+              </cl-transformation>
+          </cl-image></li>
           <li *ngIf="(user | async)"><a (click)="logout()">Logout</a></li>
         </ul>
     </div><!--/.nav-collapse -->

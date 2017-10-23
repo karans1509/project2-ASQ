@@ -24,6 +24,7 @@ export class SignupComponent implements OnInit {
   constructor(public afAuth: AngularFireAuth, private router:Router, 
     public flashMessage: FlashMessagesService, private firebaseService : FirebaseService) { 
     this.user = afAuth.auth.currentUser;
+    this.router.navigate(['/']);
   }
 
   ngOnInit() {
@@ -48,8 +49,11 @@ export class SignupComponent implements OnInit {
           this.user = user;
           console.log(this.user);
         })
-        
-        console.log(this.user);
+        this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(value=>{
+          console.log("Value : "+ value);
+          this.firebaseService.sendName(this.afAuth.auth.currentUser.displayName);
+          this.firebaseService.sendPic(this.afAuth.auth.currentUser.photoURL);
+        })
         this.router.navigate(['home']);
       }).catch(function(error) {
         console.log("Something went wrong!" );

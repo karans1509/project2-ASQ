@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import {Router} from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
-
+import { FirebaseService } from '../../services/firebase.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,12 +15,14 @@ export class LoginComponent implements OnInit {
   email : string;
   password: string;
 
-  constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage : FlashMessagesService) {
+  constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage : FlashMessagesService, private firebaseService : FirebaseService) {
     this.user = this.afAuth.authState;
     // console.log(this.user);
+    
    }
 
   ngOnInit() {
+    
   }
   
   login(){
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
         // console.log("Signed In", value , ' ', this.afAuth.auth.currentUser.email);
         console.log("Signed In : ", value.displayName); 
         console.log("Profile Pic Url: ", this.afAuth.auth.currentUser.photoURL);
+        this.firebaseService.sendPic(this.afAuth.auth.currentUser.photoURL);
         this.afAuth.auth.onAuthStateChanged(function(){
           console.log("Something happened");
         })

@@ -3,6 +3,7 @@
 .container{
 
 	background-color: #f7fafc;
+	/* background-color: hsl(174, 89%, 83%); */
 	max-width:600px;
 	margin: 20px auto;
 
@@ -10,9 +11,9 @@
 
 .container .logo{
 
-	width:200px;
+	width:150px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 .text-center{
@@ -30,6 +31,8 @@
 .form-group input{
 
 	border-bottom: 0px;
+	width: 70%;
+	margin: auto;
 }
 
 .form-group:nth-of-type(4n) input{
@@ -40,7 +43,7 @@
 
 .container form{
 
-	width: 500px;
+	max-width: 400px;
 	margin: 0 auto;
 }
 
@@ -49,12 +52,17 @@
 	/*margin: 0 auto;*/
 }
 
-
+#profile {
+	opacity: 0;
+	visibility: hidden;
+}
 
 button{
 
-    margin:30px auto;
-    width:100%;
+	margin:30px auto;
+	text-align: center;
+	display: block;
+    width:70%;
     font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	font-weight: 700;
@@ -100,12 +108,18 @@ button:last-of-type{
 button:last-of-type:hover{
 
 	background: #0277bd;
+}
+
+button:last-of-type:hover a {
 	color: #fff;
 	text-decoration: none;
 }
 
 @media screen and (max-width: 600px){
 
+	.container .logo {
+		max-width: 100px;
+	}
 
 .container form{
 

@@ -8,9 +8,9 @@
 
 .container .logo{
 
-	width:200px;
+	width:150px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 20px;
 	margin-bottom: 20px;
 }
 .form-group{
@@ -21,6 +21,8 @@
 .form-group input{
 
 	border-bottom: 0px;
+	width: 70%;
+	margin: auto;
 }
 
 .form-group:nth-of-type(4n) input{
@@ -31,7 +33,7 @@
 
 .container form{
 
-	width: 500px;
+	max-width: 400px;
 	margin: 0 auto;
 }
 
@@ -42,15 +44,14 @@
 }
 
 button{
-
     margin:30px auto;
-    width:100%;
+	width:70%;
+	display: block;
     font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	font-weight: 700;
 	background:#0277bd;
 	border: none;
-
 }
 
 button:hover{
@@ -61,8 +62,7 @@ button:hover{
 }
 
 p{
-
-	 font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	font-weight: 700;
 	color:#0277bd;
@@ -88,14 +88,19 @@ button:last-of-type{
 }
 
 button:last-of-type:hover{
-
+	
 	background: #0277bd;
-	color: #fff;
-	text-decoration: none;
 }
+	
+	button:last-of-type:hover a {
+		color: #fff;
+		text-decoration: none;
+	}
 
 @media screen and (max-width: 600px){
-
+	.container .logo {
+		max-width: 100px;
+	}
 
 .container form{
 

@@ -30,7 +30,8 @@
         </div>
 
         <div class="form-group">
-        <a href="#" id="upload_widget_opener">Upload Images</a>
+        <a href="" class="cloudinary-button" id="upload_widget_opener">Upload Images</a>
+        <!-- <a href="" class="cloudinary-button" id="upload_widget_opener">Upload Image</a> -->
         <a href="#" id="profile" name="picUrl" ></a>
       </div>
       <div>
@@ -40,7 +41,7 @@
 
         <p>Already a User?</p>
 
-         <button type="submit" class="btn btn-default" (click)="signMeUp()">LOG IN</button>
+         <button type="submit" class="btn btn-default"> <a [routerLink] = "['/login']" >LOG IN</a> </button>
     </form>
 
 
