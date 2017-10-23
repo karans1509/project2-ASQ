@@ -36,6 +36,7 @@
   "ng2-search-filter": "^0.3.1",
   "rxjs": "^5.4.2",
   "typescript": "~2.3.3",
+  "typings": "^2.1.1",
   "zone.js": "^0.8.14"
  },
  "devDependencies": {
@@ -57,9 +58,8 @@
   "ts-node": "~3.2.0",
   "tslint": "~5.3.2"
  },
-"engines":{
-
-    "node": "6.9.4",
-    "npm": "3.10.10"
-}
+ "engines": {
+  "node": "6.9.4",
+  "npm": "3.10.10"
+ }
 }
