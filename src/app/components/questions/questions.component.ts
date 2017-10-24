@@ -3,7 +3,7 @@ import { FirebaseService } from '../../services/firebase.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {Router} from '@angular/router';
 // import { AngularFireDatabase} from 'angularfire2/database';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import { Subject } from 'rxjs/Subject';
 
