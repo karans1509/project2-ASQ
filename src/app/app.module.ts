@@ -9,7 +9,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
 import { FlashMessagesModule } from 'angular2-flash-messages'; 
-import * as cloudinary from 'cloudinary-core';
+//import * as cloudinary from 'cloudinary-core';
+import { Cloudinary } from 'cloudinary-core';
 import { CloudinaryModule } from '@cloudinary/angular-4.x';
 import cloudinaryConfiguration from './config';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   { path: 'question/:id', component:QuestionComponent }
 ]
 
+export const cloudinaryLib = {
+  Cloudinary: Cloudinary
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +57,10 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     FlashMessagesModule,
-    CloudinaryModule.forRoot(cloudinary, cloudinaryConfiguration),
+    CloudinaryModule.forRoot(cloudinaryLib, { 
+
+    cloud_name: 'karan-cloud',
+    upload_preset : 'jtdgexna'}),
     Ng2SearchPipeModule
   ],
   providers: [FirebaseService], 
