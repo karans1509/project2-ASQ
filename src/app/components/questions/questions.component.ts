@@ -24,6 +24,7 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.firebaseService.getQuestions().subscribe(questions => {
+      this.questions = [];
       for(let i = questions.length -1 ; i >= 0 ; i--) {
         let item = { id : '', postedBy : '' , title : '' , likes : 0 , dislikes : 0};
         item.id = questions[i].key;

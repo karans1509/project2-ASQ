@@ -44,6 +44,9 @@ export class QuestionComponent implements OnInit {
     
     this.firebaseService.getAnswers().subscribe(answers=>{
       this.answers = [];
+      this.answerKey = [];
+      this.up = [];
+      this.down = [];
       for(let i = 0 ; i<answers.length ; i++) {
         if( answers[i].payload.val().title == this.title ) {
           let item = { answer : '', postedBy : '' , title : '', upvotes : 0 , downvotes : 0};
