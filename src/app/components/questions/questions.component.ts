@@ -14,6 +14,7 @@ import { Subject } from 'rxjs/Subject';
 })
 export class QuestionsComponent implements OnInit {
   questions = [];
+  term: any;
 
   constructor(private firebaseService : FirebaseService, private afAuth: AngularFireAuth, private router: Router) { 
     // if(this.afAuth.auth.currentUser === null) {
