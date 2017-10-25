@@ -1,3 +1,7 @@
+.question {
+    padding-bottom: 50px;
+}
+
 a {
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -9,7 +13,7 @@ cl-image img {
 
 .single {
     padding: 35px 10px;
-    border: 1px solid blue;
+    border: 1px solid #0277bd;
 }
 
 form {

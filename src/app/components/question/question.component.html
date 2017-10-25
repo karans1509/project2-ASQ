@@ -1,4 +1,4 @@
-<div *ngIf = "question">
+<div *ngIf = "question" class="question">
 <a [routerLink]="['/questions']">Go Back</a>
 <br> 
 <br>
@@ -7,14 +7,14 @@
     <cl-transformation width="100" height="100" gravity="auto" radius="10"  crop="fill">
     </cl-transformation>
 </cl-image>
-<h2 class="page-header">Question : </h2>
-<h3> {{ question.title }} </h3>
+<h3 class="page-header">Question : {{ question.title }}</h3>
+<!-- <h3> {{ question.title }} </h3> -->
 <p> By : {{ question.postedBy}} </p>
 <p></p>
 <button (click) = "incrLikes()"  class="likes">Like  </button><p>{{question.likes}}</p>
 <button (click) = "decrLikes()"  class="dislikes">Dislike </button><p>{{question.dislikes}} </p>
 <h3>Answers -</h3>
-<div class="answers" *ngIf = "answers">
+<div class="answers" *ngIf = "answers" class="answers">
   <div *ngFor = "let ans of answers, let i=index" class="single">
      <p>{{ans.postedBy}} : {{ ans.answer }}</p>
      <button (click) = "incrVotes(i)" >Upvote</button><p>{{ans.upvotes}}</p>
