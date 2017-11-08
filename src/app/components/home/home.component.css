@@ -1,8 +1,55 @@
+
 div.home {
   max-width: 1200px;
   margin: 0 auto;
  text-align: center;
+ background-color: #f7fafc
 }
 
-cl-image {
+div.box{
+
+   max-width:200px;
+   height:200px;
+   border: 2.5px solid black;
+   border-radius: 15px;
+  margin: 0 auto;
+  background-color: yellow;
+  position: relative;
+  margin-bottom: -100px;
+
+   
+}
+
+button{
+  margin:30px auto;
+
+display: block;
+  font-family: 'Open Sans', sans-serif;
+font-size: 15px;
+font-weight: 700;
+background:#0277bd;
+border: none;
+border-radius: 15px;
+}
+
+button:hover{
+
+color:#fff;
+background-color: #3592ca;
+border: 1px solid #0277bd;
+}
+
+a{
+
+  text-decoration: none;
+  color:white
+}
+
+div.content{
+
+  background-color: #fff;
+  
+  padding-top:100px;
+  padding-bottom: 30px;
+ 
 }
