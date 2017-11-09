@@ -12,6 +12,7 @@ import * as firebase from 'firebase/app';
 export class PostQuestionComponent implements OnInit {
   title : any;
   postedBy : any;
+  category : any;
   user : firebase.User;
 
   constructor( private afAuth : AngularFireAuth, private router : Router, 
@@ -33,6 +34,7 @@ export class PostQuestionComponent implements OnInit {
     let question = {
       title : this.title,
       postedBy : this.postedBy,
+      category : this.category,
       likes : 0,
       dislikes : 0,
       photo : this.user.photoURL
