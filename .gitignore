@@ -42,4 +42,5 @@ testem.log
 Thumbs.db
 
 # Local dev configuration
+src/environments
 .gitignore
