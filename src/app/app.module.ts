@@ -26,7 +26,8 @@ import { PostQuestionComponent } from './components/post-question/post-question.
 import { LandingComponent } from './components/landing/landing.component';
 
 const appRoutes: Routes = [
-  { path:'', component:SignupComponent },
+  { path:'', component:LandingComponent },
+  { path:'signup', component:SignupComponent },
   { path:'login', component:LoginComponent },
   { path:'questions', component:QuestionsComponent },
   { path:'home', component:HomeComponent },

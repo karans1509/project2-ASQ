@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   constructor(public afAuth: AngularFireAuth, private router:Router, 
     public flashMessage: FlashMessagesService, private firebaseService : FirebaseService) { 
     this.user = afAuth.auth.currentUser;
-    this.router.navigate(['/']);
+    
   }
 
   ngOnInit() {

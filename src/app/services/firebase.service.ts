@@ -40,10 +40,10 @@ export class FirebaseService {
    console.log("User detail saved : "+ this.currentUserName);
   }
 
-  // getUsers() {
-  //  let name = this.db.list('users', ref => ref.orderByChild('name').equalTo(this.currentUserName));
-  //  return name.snapshotChanges();
-  // }
+  getUsers() {
+   let name = this.db.list('users', ref => ref.orderByChild('name').equalTo("Karan Saini"));
+   return name.snapshotChanges();
+  }
   
   getQuestions(){
    this.questionsRef = this.db.list('questions').snapshotChanges();
