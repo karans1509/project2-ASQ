@@ -39,6 +39,7 @@ export class PostQuestionComponent implements OnInit {
       dislikes : 0,
       photo : this.user.photoURL
     }
+    console.log("submitting");
     this.firebaseService.newQuestion(question);
     this.router.navigate(['questions']);
   }

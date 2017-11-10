@@ -31,10 +31,12 @@ export class LoginComponent implements OnInit {
       .then(value=>{
         // console.log("Signed In", value , ' ', this.afAuth.auth.currentUser.email);
         console.log("Signed In : ", value.displayName); 
+        this.firebaseService.setUser(value.displayName);
         console.log("Profile Pic Url: ", this.afAuth.auth.currentUser.photoURL);
         this.firebaseService.sendPic(this.afAuth.auth.currentUser.photoURL);
         this.afAuth.auth.onAuthStateChanged(function(){
           console.log("Something happened");
+          
         })
         this.router.navigate(['home']);
       })

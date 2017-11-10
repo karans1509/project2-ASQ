@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Subject } from 'rxjs/Subject';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class FirebaseService {
@@ -16,13 +17,33 @@ export class FirebaseService {
   answersRef : Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
   answers : any; 
 
-  user : firebase.User;
+  users : any;
+  userRef : Observable<AngularFireAction<firebase.database.DataSnapshot>>;
+  loggedInUser : Observable<AngularFireAction<firebase.database.DataSnapshot>>;
+  currentUserName : any;
+
+  // user : firebase.User;
   subj = new Subject<any>();
   subj2 = new Subject<any>();
 
   constructor(private db : AngularFireDatabase, private afAuth : AngularFireAuth) {
-    // this.name = this.afAuth.auth.currentUser.displayName;
+    
    }
+
+  addUser(newUser) {
+      this.users = this.db.list('users');
+      this.users.push(newUser);
+  }
+
+  setUser(currentUserName){
+   this.currentUserName = currentUserName;
+   console.log("User detail saved : "+ this.currentUserName);
+  }
+
+  // getUsers() {
+  //  let name = this.db.list('users', ref => ref.orderByChild('name').equalTo(this.currentUserName));
+  //  return name.snapshotChanges();
+  // }
   
   getQuestions(){
    this.questionsRef = this.db.list('questions').snapshotChanges();

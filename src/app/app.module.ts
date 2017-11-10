@@ -23,6 +23,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { QuestionComponent } from './components/question/question.component';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 const appRoutes: Routes = [
   { path:'', component:SignupComponent },
@@ -46,7 +47,8 @@ export const cloudinaryLib = {
     QuestionsComponent,
     NavbarComponent,
     QuestionComponent,
-    PostQuestionComponent
+    PostQuestionComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

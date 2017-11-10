@@ -37,8 +37,12 @@ export class SignupComponent implements OnInit {
   signMeUp(){
     this.errorMessage = "";
     if(this.email && this.password && this.first && this.last) {
+
+      // creating new user
       this.afAuth.auth.createUserWithEmailAndPassword(this.email,this.password).then(value =>{
         let url = document.getElementById('profile');
+
+        // updating name and photo
         this.afAuth.auth.currentUser.updateProfile({
           displayName: this.first + ' ' + this.last ,
           photoURL : url.textContent
@@ -47,13 +51,24 @@ export class SignupComponent implements OnInit {
         })
         this.afAuth.auth.onAuthStateChanged((user)=>{
           this.user = user;
-          console.log(this.user);
         })
+
+        // signing the user in
         this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(value=>{
-          console.log("Value : "+ value);
+          // console.log("Value : "+ value);
+          console.log("User is - "+this.afAuth.auth.currentUser.displayName);
+          this.firebaseService.setUser(this.afAuth.auth.currentUser.displayName);
           this.firebaseService.sendName(this.afAuth.auth.currentUser.displayName);
           this.firebaseService.sendPic(this.afAuth.auth.currentUser.photoURL);
         })
+        
+        // Adding the user to database
+        let newUser = {
+          name : this.first + " " + this.last,
+          photoURL : url.textContent
+        }
+        this.firebaseService.addUser(newUser);
+
         this.router.navigate(['home']);
       }).catch(function(error) {
         console.log("Something went wrong!" );
