@@ -14,6 +14,7 @@ import { Cloudinary } from 'cloudinary-core';
 import { CloudinaryModule } from '@cloudinary/angular-4.x';
 import cloudinaryConfiguration from './config';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PopupModule } from 'ng2-opd-popup';
  
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -64,7 +65,8 @@ export const cloudinaryLib = {
 
     cloud_name: 'karan-cloud',
     upload_preset : 'jtdgexna'}),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    PopupModule.forRoot()
   ],
   providers: [FirebaseService], 
   bootstrap: [AppComponent]
