@@ -10,7 +10,7 @@
    
 }
 
-.landing .nav .li:hover {
+.landing .nav li a:hover {
 
     background-color:none;
 
@@ -135,8 +135,9 @@
     width:150px;
     display: block;
     margin: 0 auto;
-    background-color: transparent;
-    border: 1px solid #DB5461 ;
+    background-color:#fff;
+   
+    border:none ;
     border-radius: 5px;
     margin-top: 20px;
     position: relative;
@@ -150,5 +151,31 @@
     background-color: #DB5461;
     transition: background-color 0.5s;
 }
+.banner button:last-of-type:hover a{
 
+    color: white;
+}
+.banner button:last-of-type a {
+
+    color: #DB5461;
+}
+
+.content h1{
+
+    color: #0D3B66;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 40px;
+
+}
+
+.content p{
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin: auto 130px;
+    padding-top: 20px;
+}
     
