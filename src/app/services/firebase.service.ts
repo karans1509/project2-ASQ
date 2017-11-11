@@ -57,6 +57,7 @@ export class FirebaseService {
   }
 
   newQuestion(question){
+    this.questions = this.db.list("questions");
     this.questions.push(question);
   }
 

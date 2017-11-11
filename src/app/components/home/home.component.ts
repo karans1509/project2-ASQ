@@ -43,10 +43,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.profilePic = this.afAuth.auth.currentUser.photoURL;
-
-    this.name = this.afAuth.auth.currentUser.displayName;
-
+    if(this.afAuth.auth.currentUser != null) {
+      this.profilePic = this.afAuth.auth.currentUser.photoURL;     
+      this.name = this.afAuth.auth.currentUser.displayName;
+    }
   }
 
 }

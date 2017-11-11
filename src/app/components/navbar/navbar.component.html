@@ -17,7 +17,7 @@
         <li *ngIf="(user | async)"><a (click)="show()">Post a Question</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right ">
-          <li><cl-image public-id="{{photo}}" >
+          <li *ngIf ="(user | async)"><cl-image *ngIf="(photo)" public-id="{{photo}}" >
               <cl-transformation width="50" height="50" gravity="face" radius="10"  crop="thumb">
               </cl-transformation>
           </cl-image></li>
