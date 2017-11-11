@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import {Router, ActivatedRoute} from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { FirebaseService } from '../../services/firebase.service';
+import { Popup } from 'ng2-opd-popup';
 
 @Component({
   selector: 'app-navbar',
@@ -15,18 +16,37 @@ export class NavbarComponent implements OnInit {
   user : Observable<firebase.User>;
   photo : any;
   url : any;
+
+  title : any;
+  postedBy : any;
+  category : any;
+  currUser : firebase.User;
   
-  constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage: FlashMessagesService, private current : ActivatedRoute, private firebaseService : FirebaseService) { 
+  constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage: FlashMessagesService, private current : ActivatedRoute, private firebaseService : FirebaseService, private popup : Popup) { 
+
     this.user = this.afAuth.authState;
+
     this.firebaseService.getPic().subscribe(message => {
       // console.log(message);
       this.photo = message.photo;
       console.log(this.photo);
     })
+    
+    if(this.afAuth.auth.currentUser === null ){
+      // this.router.navigate(['/']);
+    }
+    else {
+      this.postedBy = this.afAuth.auth.currentUser.displayName;
+    }
+    this.currUser = this.afAuth.auth.currentUser;
+
+    this.afAuth.auth.onAuthStateChanged((user)=>{
+      this.postedBy = user.displayName;
+    })
   }
 
   ngOnInit() {
-  
+  this.postedBy = this.afAuth.auth.currentUser.displayName;
   }
 
   logout(){
@@ -38,6 +58,34 @@ export class NavbarComponent implements OnInit {
     .catch((error)=>{
       console.log(error);
     })
+  }
+
+  show() {
+    this.popup.options = {
+      cancleBtnClass: "btn btn-default", 
+      confirmBtnClass: "btn btn-default",
+      animationDuration : 1.5,
+      confirmBtnContent : "Submit",
+      cancleBtnContent : "Cancel",
+      animation : 'fadeInUp',
+      color: "#4180ab"}
+      this.popup.show(this.popup.options);
+  }
+
+  onAddSubmit() {
+    let question = {
+      title : this.title,
+      postedBy : this.postedBy,
+      category : this.category,
+      likes : 0,
+      dislikes : 0,
+      photo : this.photo
+    }
+    console.log("submitting");
+    this.firebaseService.newQuestion(question);
+    this.title = "";
+    this.popup.hide();
+    this.router.navigate(['questions']);
   }
 
 }
