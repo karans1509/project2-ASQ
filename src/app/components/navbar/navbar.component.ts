@@ -41,12 +41,18 @@ export class NavbarComponent implements OnInit {
     this.currUser = this.afAuth.auth.currentUser;
 
     this.afAuth.auth.onAuthStateChanged((user)=>{
+      if(user != null) 
       this.postedBy = user.displayName;
+      this.photo = user.photoURL;
+      console.log(user.providerData);
     })
   }
 
   ngOnInit() {
-  this.postedBy = this.afAuth.auth.currentUser.displayName;
+    if(this.afAuth.auth.currentUser != null) {
+      this.postedBy = this.afAuth.auth.currentUser.displayName;
+      console.log(this.afAuth.auth.currentUser.providerData);
+    }
   }
 
   logout(){
