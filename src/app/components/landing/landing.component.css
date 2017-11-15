@@ -1,181 +1,290 @@
 
+/************** Navbar ************** */
+
 .navbar{
 
-    /* background:url('../../assets/images/wallpaper.jpeg'); */
-    background-color: #DB5461;
+    background-color:#db5461;
+    position: fixed;
     width:100%;
-    margin-bottom:0;
+    top: 0;
     position: relative;
-    z-index:1;
-   
-}
-
-.landing .nav li a:hover {
-
-    background-color:none;
-
-
-}
-
-.landing .nav li a{
-    
-    text-decoration: none;
-    color:white;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    font-size: 1.75rem;
+    z-index: 3;
+    margin-bottom: 0;
   
 }
 
-.landing .nav li{
+.nav li a {
 
-    padding-right: 15px;
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+
 }
 
-.landing .nav li.logo{
-    width:75px;
-    height:auto;
-    padding:15px 15px;
+li.logo{
 
- 
+    width:80px;
+    padding:10px 0 0 25px;
+  
+
 }
 
-.landing .banner{
 
+.navbar ul:last-of-type li:first-of-type,li:first-of-type+li{
+
+    display: none;
+    visibility: hidden;
+}
+
+ul:first-of-type{
+
+    display: inline-block;
+}
+
+ul:last-of-type{
+
+    display: inline-block;
+    float:right;
+    padding:12px 10px 0 0;
     
-    /* opacity: 0.5; */
-    margin-top: -21px;
-    height: 60vh;
-    padding-top: 25px;
+    
+}
+
+span.icon-menu{
+
+   
+    color: white;
+
+  
+}
+
+/* ********** Banner ********** */
+
+.banner{
+
     background: url('../../../assets/images/wallpaper.png');
-    background-size:cover;
+    background-size: cover;
+    height: 60vh;
     position: relative;
-    
-   
-   
+    max-width: 100%;
 }
 
 .opaq{
 
-    background-color:#0D3B66;
-  
-   margin-top: -25px;
-    opacity: 0.5;
-   
-    position: absolute;
     width:100%;
-    height: 100%;
-    z-index:0;
-    
+    height:60vh;
+    background: url('../../../assets/images/bg.png');
+    background-size: cover;
+   
+    z-index: 2;
 }
-.banner h1{
+
+.landing .banner h1{
 
     color:white;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
-    text-align: center;
-    padding-top: 40px;
-    position: relative;
-    z-index: 1;
+    
+    position: absolute;
+    top:10%;
+    left:0;
+    right:0;
+   font-size: 2.5rem;
+   text-align: center;
+   margin: 0 auto;
+    z-index: 4;
+ 
+    
 }
 
-.banner h3{
+.landing .banner h3{
+
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
     
-        color:white;
+    position: absolute;
+    top:15%;
+    left:0;
+    right:0;
+   font-size: 2rem;
+   padding-top: 40px;
+  
+    text-align: center;
+   
+   
+    z-index: 4;
+
+}
+
+.landing .banner button:first-of-type{
+
+    position: absolute;
+    top:30%;
+    left:0;
+    right:0;
+    width:175px;
+   
+    margin: 0 auto;
+    margin-top: 45px;
+  
+    z-index: 4;
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    background:#DB5461;
+    border: none;
+}
+
+.landing .banner button:first-of-type a{
+
+    text-decoration: none;
+    color: white;
+}
+
+.landing .banner button:first-of-type:hover{
+
+    background:white;
+    transition: 1s;
+
+}
+
+.landing .banner button:first-of-type:hover a{
+
+    color:#db5461;
+}
+
+.landing .banner p{
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: white;
+
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    padding-top: 30px;
+    
+    text-align: center;
+   
+}
+
+.landing .banner button:last-of-type{
+    
+        position: absolute;
+        top:60%;
+        left:0;
+        right:0;
+        width:175px;
+       
+        margin: 0 auto;
+        margin-top: 40px;
+      
+        z-index: 4;
+    
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        font-size: 1.75rem;
+        background:white;
+        border: none;
+    }
+    
+    .landing .banner button:last-of-type a{
+    
+        text-decoration: none;
+        color:#db5461;
+    }
+
+    .landing .banner button:last-of-type:hover{
+        
+            background:#db5461;
+            transition: 1s;
+        
+        }
+        
+        .landing .banner button:last-of-type:hover a{
+        
+            color:white;
+        }
+
+
+    /* CONTENT */
+
+    .content{
+
+        background-color:white;
+        width:100%;
+        height:40vh;
+        padding-top: 30px;
+    }
+
+    .content h1{
+
         font-family: 'Nunito', sans-serif;
         font-weight: 600;
         text-align: center;
-        padding-top: 5px;
-        position: relative;
-        z-index: 1;
+        /* font-size: 1.75rem; */
     }
 
-.banner button a {
+    .content p{
+ 
 
-    color:white;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-}
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        margin: 30px 55px;
 
-.banner button:first-of-type{
-
-    width:150px;
-   display: block;
-   margin: 0 auto;
-   background-color: #DB5461;
-   border: none;
-   border-radius: 5px;
-   margin-top: 20px;
-   z-index: 2;
-   position: relative;
-   z-index: 1;
-}
-
-.banner button:first-of-type:hover{
-
-    background-color: #E27681;
-    border: 1px solid #E27681;
-}
-
-.banner p{
-
-    text-align: center;
-    color:white;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    padding-top: 15px;
-    position: relative;
-    z-index: 1;
-
-}
-
-.banner button:last-of-type{
-
-    width:150px;
-    display: block;
-    margin: 0 auto;
-    background-color:#fff;
-   
-    border:none ;
-    border-radius: 5px;
-    margin-top: 20px;
-    position: relative;
-    z-index: 1;
+    }
 
 
-}
+    /* Desktop Version */
 
-.banner button:last-of-type:hover{
+    @media screen and (min-width:700px) {
 
-    background-color: #DB5461;
-    transition: background-color 0.5s;
-}
-.banner button:last-of-type:hover a{
+        /* NAVBAR */
 
-    color: white;
-}
-.banner button:last-of-type a {
+        .navbar ul:last-of-type li:first-of-type,li:first-of-type+li{
+            
+                display: inline-block;
+                visibility: visible;
+            }
 
-    color: #DB5461;
-}
+        .navbar ul:last-of-type span{
 
-.content h1{
+            display: none;
+            visibility: hidden;
+        }
 
-    color: #0D3B66;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    text-align: center;
-    padding-top: 40px;
+        .navbar ul:last-of-type li:first-of-type a,li:first-of-type+li a{
 
-}
+            font-size: 1.75rem;
+            padding-top: 2px;
+            padding-right: 25px;
+        }
 
-.content p{
+      
 
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    font-size: 1.75rem;
-    margin: auto 130px;
-    padding-top: 20px;
-}
-    
+        .landing .banner h1{
+
+            font-size: 3.75rem;
+        }
+
+        .landing .banner h3{
+
+            font-size: 2.75rem;
+        }
+
+        .content h1{
+
+            font-size: 3.75rem;
+        }
+
+        .content p{
+
+            font-size: 2rem;
+        }
+        
+    }

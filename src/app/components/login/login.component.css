@@ -1,109 +1,192 @@
+
+.wrapper{
+	
+		background: url('../../../assets/images/wallpaper.png');
+		background-size:cover;
+		
+		width:100%;
+		height:100vh;
+		padding-top: 20px;
+	}
+	
+	.opaq{
+		
+		  background-color:#0D3B66;
+		  top:0;
+		  left:0;
+		  right:0;
+		  bottom:0;
+		  opacity: 0.5;
+		   position: absolute;
+			width:100%;
+			height: 100%;
+			z-index:0;
+	}	
+
+
+
 .container{
 
-	background-color: #f7fafc;
-	max-width:600px;
-	margin: 20px auto;
+	max-width:500px;;
+	
+	 margin: 0 auto;
+	 background-color: #fff;
+	 padding-bottom: 20px;
+	 position: relative;
+	 z-index: 1;
+	 box-shadow: 5px 5px 15px rgb(29, 29, 29);
+	 margin-top: 70px;
 
 }
 
 .container .logo{
-
-	width:150px;
+    padding-top: 20px;
+	max-width:150px;
 	margin: 0 auto;
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
-.form-group{
 
-      margin-bottom: 0;
-}
-
-.form-group input{
-
-	border-bottom: 0px;
-	width: 70%;
-	margin: auto;
-}
-
-.form-group:nth-of-type(4n) input{
-
-	border-bottom: 1px solid #c0c0c0;
-	margin-bottom: 15px;
-}
-
-.container form{
-
-	max-width: 400px;
+.container .logo img{
+	width:100%;
 	margin: 0 auto;
+	margin-top: 20px;
 }
 
-.form-group:nth-of-type(2n) input{
-
-	border-bottom: 1px solid #c0c0c0;
-	/*margin-bottom: 15px;*/
-}
-
-button{
-    margin:30px auto;
-	width:70%;
-	display: block;
-    font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
-	font-weight: 700;
-	background:#0277bd;
-	border: none;
-}
-
-button:hover{
-
-	color:#fff;
-	background-color: #3592ca;
-	border: 1px solid #0277bd;
-}
-
-p{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
-	font-weight: 700;
-	color:#0277bd;
-	text-align: center;
-}
-
-button:last-of-type{
-
-	background-color: #f7fafc;
-	font-family: 'Open Sans', sans-serif;
-	border-radius: 0px;
-	background: #f7fafc;
-	color:#0277bd;
-	border: 1px solid #0277bd;
-	/*width:60%;*/
-	text-align: center;
-	/*margin-left: 110px;	*/
+.text-center{
 	
-	margin: 0 auto;
-
-	display: block;
-	margin-bottom: 15px;
-}
-
-button:last-of-type:hover{
+		font-family: 'Nunito', sans-serif;
+		font-weight: 600;
+		font-size: 2rem;
+	}
 	
-	background: #0277bd;
-}
+	.form-group{
+	
+		  margin-bottom: 0;
+	}
+	
+	.form-group input{
+	
+		border-bottom: 0px;
+		width: 70%;
+		margin: auto;
+		font-family: 'Nunito', sans-serif;
+		font-weight: 300;
+	}
+	
+	.form-group:nth-of-type(4n) input{
+	
+		border-bottom: 1px solid #DB5461;
+		margin-bottom: 15px;
+	}
+	
+	.container form{
+	
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	
+
+	
+	#profile {
+		opacity: 0;
+		visibility: hidden;
+	}
+	
+	button{
+	
+		margin:30px auto;
+		text-align: center;
+		display: block;
+		width:70%;
+		font-family: 'Nunito', sans-serif;
+		font-weight: 600;
+		font-size: 1.75rem;
+		background:#DB5461;
+		border: none;
+	
+	}
+	
+	button:hover{
+	
+		color:#fff;
+		background-color: rgb(212, 111, 121);
+		border: 1px solid #DB5461;
+	}
+	
+	p{
+	
+		font-family: 'Nunito', sans-serif;
+		font-weight: 600;
+		color:#DB5461;
+		text-align: center;
+	}
+	
+	button:last-of-type{
+	
+		background-color:transparent;
+		font-family: 'Nunito', sans-serif;
+		font-weight: 600;
+		border-radius: 0px;
+		background: #f7fafc;
+		
+		border: 1px solid #DB5461;
+		/*width:60%;*/
+		text-align: center;
+		/*margin-left: 110px;	*/
+		
+		margin: 0 auto;
+	
+		display: block;
+		margin-bottom: 15px;
+		
+	}
+	
+	button:last-of-type a{
+	
+		color:#DB5461;
+	}
+	
+	button:last-of-type:hover{
+	
+		background: #DB5461;
+	}
 	
 	button:last-of-type:hover a {
 		color: #fff;
 		text-decoration: none;
 	}
-
-@media screen and (max-width: 600px){
-	.container .logo {
-		max-width: 100px;
+	
+	.form-control{
+	
+	
+		border: 1px solid #DB5461;
+		
 	}
+	 form .form-group:first-of-type input{
+	
+		border-top-left-radius:2px;
+		border-top-right-radius: 2px;
+	}
+	
+	.form-group[_ngcontent-c3]:last-of-type   input[_ngcontent-c3]{
+	
+		border-bottom: 1px solid #DB5461;
+		border-bottom-left-radius:2px;
+		border-bottom-right-radius: 2px;
+	}
+	@media screen and (max-width: 600px){
+	
+		.container{
 
-.container form{
-
-	max-width: 300px;
-}
-}
+			max-width: 70%;
+		}
+		.container .logo {
+			max-width: 100px;
+		}
+	
+	.container form{
+	
+		max-width: 300px;
+	}
+	}
+	

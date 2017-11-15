@@ -3,12 +3,12 @@
 
 .cloudinary-button{
 
-	background-color: #f7fafc;
-	font-family: 'Open Sans', sans-serif;
+	background-color:transparent;
+	font-family: 'Nunito', sans-serif;
 	border-radius: 0px;
 	background: #f7fafc;
-	color:#0277bd;
-	border: 1px solid #0277bd;
+	color:#DB5461;
+	border: 1px solid #DB5461;
 	width:60%;
 	text-align: center;
 	/*margin-left: 110px;	*/
@@ -20,12 +20,18 @@
 
 .cloudinary-button:hover{
 
-	background: #0277bd;
+	background: #DB5461;
 	color: #fff;
 	text-decoration: none;
 }
 
 body{
 	
-	  background-color: #f7fafc
-	}
+		background: url('assets/images/bg.png'),url('assets/images/wallpaper.png');
+		background-size: cover,cover;
+		background-repeat: no-repeat;
+		}
+
+		
+
+

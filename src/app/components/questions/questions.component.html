@@ -1,6 +1,40 @@
-<input type="text" [(ngModel)]="term" placeholder="Search here...">
-  <div *ngFor="let item of questions | filter:term">
-  <h3><a [routerLink]="['/question/'+item.id]">Question : {{ item.title}}</a></h3>
+
+  <div class="container">
+
+        <input type="text" [(ngModel)]="term" placeholder="Search">
+
+        <div class="top">
+                
+             
+           
+                   <a href="">My Collection</a><br>
+                   <a href="">My questions</a><br>
+                   <h3>Trending Categories</h3><br>
+                   <a href="">Category 1</a><br>
+                   <a href="">Category 1</a><br>
+                   <a href="">Category 1</a><br>
+                   <a href="">Category 1</a><br>
+                   
+             
+           
+             </div>
+           
+           
+       
+           
+           
+  
+ 
+  <div class="main" *ngFor="let item of questions | filter:term">
+  <div class="image"><img src="../../../assets/images/ques.svg" alt=""></div>
+  <h3><a [routerLink]="['/question/'+item.id]">{{ item.title}}</a></h3>
+  <hr>
   <p>Posted By : {{ item.postedBy}}</p>
-  <p>Likes : {{item.likes}}  &nbsp; &nbsp; &nbsp;Dislikes : {{item.dislikes}} </p>
+  <p>{{item.likes}} Likes  &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes  &nbsp; &nbsp; &nbsp;Add to Collection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; <a href="">See Answers</a></p>
+  
   </div>
+
+
+</div>
+
+  

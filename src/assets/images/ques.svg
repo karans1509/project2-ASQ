@@ -1,0 +1,38 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: #ec4762;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke: #ec4762;
+      }
+
+      .cls-3 {
+        stroke: #376a82;
+        stroke-width: 0.88px;
+      }
+
+      .cls-4 {
+        font-size: 23px;
+        font-family: Nunito-ExtraBold, Nunito;
+        font-weight: 700;
+        letter-spacing: -0.14em;
+      }
+    </style>
+  </defs>
+  <title>ques</title>
+  <g id="_Group_" data-name="&lt;Group&gt;">
+    <path id="_Path_" data-name="&lt;Path&gt;" class="cls-1" d="M361.38,420.17" transform="translate(-343 -397.38)"/>
+    <path id="_Compound_Path_" data-name="&lt;Compound Path&gt;" class="cls-1" d="M362.95,407.33V424.7l-2-6.07h-4.84V407.33h6.84m2.05-2H354.05v15.21H365V405.38Z" transform="translate(-343 -397.38)"/>
+  </g>
+  <circle class="cls-2" cx="16.5" cy="16.5" r="16"/>
+  <circle class="cls-3" cx="16.5" cy="16.5" r="14"/>
+  <text class="cls-4" transform="translate(3.2 23.38)"> </text>
+</svg>
