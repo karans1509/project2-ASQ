@@ -1,21 +1,21 @@
-<div class="home" *ngIf = "(currUser | async)">
- <!-- <cl-image public-id="{{profilePic}}" >
+<div class="home" *ngIf="(user | async)">
+  <!-- <cl-image public-id="{{profilePic}}" >
     <cl-transformation width="100" height="100" gravity="auto" radius="15"  crop="fill">
     </cl-transformation>
     <cl-transformation dpr="2.0"></cl-transformation>
   </cl-image> -->
 
   <div class="box">
-
-
   </div>
 
-  <div class="content">
-  <h1> Hi {{name }}!</h1>
-  <h2>Welcome to ASQ!</h2>
-  <p>Your favorite place to ask anything.</p>
+  <div class="content" *ngIf = "(user | async)">
+    <h1> Hi {{ name }}!</h1>
+    <h2>Welcome to ASQ!</h2>
+    <p>Your favorite place to ask anything.</p>
 
-  <button type="submit" class="btn btn-default"> <a [routerLink] = "['/login']" >Get Started</a> </button>
+    <button type="submit" class="btn btn-default">
+      <a [routerLink]="['/login']">Get Started</a>
+    </button>
 
   </div>
 </div>

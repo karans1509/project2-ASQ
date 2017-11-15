@@ -17,33 +17,12 @@ export class FirebaseService {
   answersRef : Observable<AngularFireAction<firebase.database.DataSnapshot>[]>;
   answers : any; 
 
-  users : any;
-  userRef : Observable<AngularFireAction<firebase.database.DataSnapshot>>;
-  loggedInUser : Observable<AngularFireAction<firebase.database.DataSnapshot>>;
-  currentUserName : any;
-
-  // user : firebase.User;
   subj = new Subject<any>();
   subj2 = new Subject<any>();
 
   constructor(private db : AngularFireDatabase, private afAuth : AngularFireAuth) {
     
    }
-
-  addUser(newUser) {
-      this.users = this.db.list('users');
-      this.users.push(newUser);
-  }
-
-  setUser(currentUserName){
-   this.currentUserName = currentUserName;
-   console.log("User detail saved : "+ this.currentUserName);
-  }
-
-  getUsers() {
-   let name = this.db.list('users', ref => ref.orderByChild('name').equalTo("Karan Saini"));
-   return name.snapshotChanges();
-  }
   
   getQuestions(){
    this.questionsRef = this.db.list('questions').snapshotChanges();

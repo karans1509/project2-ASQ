@@ -17,8 +17,9 @@ export class LoginComponent implements OnInit {
 
   constructor(public afAuth: AngularFireAuth, private router:Router, public flashMessage : FlashMessagesService, private firebaseService : FirebaseService) {
     this.user = this.afAuth.authState;
-    // console.log(this.user);
-    
+    if(this.user) {
+      // this.router.navigate(['home']);
+    }
    }
 
   ngOnInit() {
@@ -29,15 +30,6 @@ export class LoginComponent implements OnInit {
     if(this.email && this.password) {
       this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
       .then(value=>{
-        // console.log("Signed In", value , ' ', this.afAuth.auth.currentUser.email);
-        console.log("Signed In : ", value.displayName); 
-        this.firebaseService.setUser(value.displayName);
-        console.log("Profile Pic Url: ", this.afAuth.auth.currentUser.photoURL);
-        this.firebaseService.sendPic(this.afAuth.auth.currentUser.photoURL);
-        this.afAuth.auth.onAuthStateChanged(function(){
-          console.log("Something happened");
-          
-        })
         this.router.navigate(['home']);
       })
       .catch(function(error){
@@ -47,7 +39,6 @@ export class LoginComponent implements OnInit {
     }
     else {
       console.log("Enter email and password");
-      // alert("Enter email and password");
       this.flashMessage.show("Enter email and password ", {cssClass : 'alert-danger', timeOut: 3000});
     }
     

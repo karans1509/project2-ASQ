@@ -12,7 +12,7 @@ import {FirebaseService} from '../../services/firebase.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user : firebase.User;
+  user : Observable<firebase.User>;
   first : string;
   last : string;
   image : string;
@@ -23,8 +23,10 @@ export class SignupComponent implements OnInit {
 
   constructor(public afAuth: AngularFireAuth, private router:Router, 
     public flashMessage: FlashMessagesService, private firebaseService : FirebaseService) { 
-    this.user = afAuth.auth.currentUser;
-    
+    this.user = this.afAuth.authState;
+    if(this.user) {
+      // this.router.navigate(['home']);
+    }
   }
 
   ngOnInit() {
@@ -32,7 +34,6 @@ export class SignupComponent implements OnInit {
       this.router.navigate(['/home']);
     }
   }
-
 
   signMeUp(){
     this.errorMessage = "";
@@ -49,31 +50,17 @@ export class SignupComponent implements OnInit {
         }).catch(()=>{
           console.log('some error');  
         })
-        this.afAuth.auth.onAuthStateChanged((user)=>{
-          this.user = user;
-        })
 
         // signing the user in
         this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(value=>{
-          // console.log("Value : "+ value);
-          console.log("User is - "+this.afAuth.auth.currentUser.displayName);
-          this.firebaseService.setUser(this.afAuth.auth.currentUser.displayName);
           this.firebaseService.sendName(this.afAuth.auth.currentUser.displayName);
           this.firebaseService.sendPic(this.afAuth.auth.currentUser.photoURL);
         })
         
-        // Adding the user to database
-        let newUser = {
-          name : this.first + " " + this.last,
-          photoURL : url.textContent
-        }
-        this.firebaseService.addUser(newUser);
-
         this.router.navigate(['home']);
+
       }).catch(function(error) {
-        console.log("Something went wrong!" );
         alert(error.message);
-        console.log(error.message);
       })
     }
     else if( this.first == null || this.last == null ) {

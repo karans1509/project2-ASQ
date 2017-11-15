@@ -15,11 +15,13 @@ import { Subject } from 'rxjs/Subject';
 export class QuestionsComponent implements OnInit {
   questions = [];
   term: any;
+  user : Observable<firebase.User>;
 
   constructor(private firebaseService : FirebaseService, private afAuth: AngularFireAuth, private router: Router) { 
     // if(this.afAuth.auth.currentUser === null) {
     //   this.router.navigate(['/']);
     // }
+    this.user = this.afAuth.authState;
   }
 
   ngOnInit() {
