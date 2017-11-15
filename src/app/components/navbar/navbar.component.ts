@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     this.firebaseService.getPic().subscribe(message => {
       // console.log(message);
       this.photo = message.photo;
-      console.log(this.photo);
+      // console.log(this.photo);
     })
     
     if(this.afAuth.auth.currentUser === null ){
@@ -41,25 +41,25 @@ export class NavbarComponent implements OnInit {
     this.currUser = this.afAuth.auth.currentUser;
 
     this.afAuth.auth.onAuthStateChanged((user)=>{
-      if(user != null) 
-      this.postedBy = user.displayName;
-      this.photo = user.photoURL;
-      console.log(user.providerData);
+      if(user != null)  {
+        this.postedBy = user.displayName;
+        this.photo = user.photoURL;
+      }
+      
     })
   }
 
   ngOnInit() {
     if(this.afAuth.auth.currentUser != null) {
       this.postedBy = this.afAuth.auth.currentUser.displayName;
-      console.log(this.afAuth.auth.currentUser.providerData);
     }
   }
 
   logout(){
     this.afAuth.auth.signOut().then(()=>{
       console.log("Signed Out");
-      this.flashMessage.show("You are logged out", {cssClass: 'alert-success', timeOut : 3000});
-      this.router.navigate(['login']);
+      // this.flashMessage.show("You are logged out", {cssClass: 'alert-success', timeOut : 3000});
+      this.router.navigate(['']);
     })
     .catch((error)=>{
       console.log(error);
@@ -73,7 +73,7 @@ export class NavbarComponent implements OnInit {
       animationDuration : 1.5,
       confirmBtnContent : "Submit",
       cancleBtnContent : "Cancel",
-      animation : 'fadeInUp',
+      animation : 'fadeInDown',
       color: "#4180ab"}
       this.popup.show(this.popup.options);
   }
@@ -87,7 +87,6 @@ export class NavbarComponent implements OnInit {
       dislikes : 0,
       photo : this.photo
     }
-    console.log("submitting");
     this.firebaseService.newQuestion(question);
     this.title = "";
     this.popup.hide();
