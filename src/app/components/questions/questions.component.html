@@ -1,40 +1,45 @@
+<div class="container">
 
-  <div class="container">
+  <input type="text" [(ngModel)]="term" placeholder="&nbsp;&nbsp;Search">
+  <div class="drop">
+    <label for="">Category</label>
 
-        <input type="text" [(ngModel)]="term" placeholder="Search">
+    <select name="" id="">
 
-        <div class="top">
-                
-             
-           
-                   <a href="">My Collection</a><br>
-                   <a href="">My questions</a><br>
-                   <h3>Trending Categories</h3><br>
-                   <a href="">Category 1</a><br>
-                   <a href="">Category 1</a><br>
-                   <a href="">Category 1</a><br>
-                   <a href="">Category 1</a><br>
-                   
-             
-           
-             </div>
-           
-           
-       
-           
-           
-  
- 
+      <option value="">Campus</option>
+      <option value="">Books</option>
+      <option value="">Library</option>
+      <option value="">Admission</option>
+      <option value="">Food</option>
+      <option value="">Events</option>
+
+    </select>
+  </div>
+
+  <!-- <div class="top">
+
+   <div class="topa"><a href="">My Collection</a></div>
+    <br>
+    <div class="topa"><a href="">My questions</a></div>
+    <br>
+
+  </div> -->
+
+
   <div class="main" *ngFor="let item of questions | filter:term">
-  <div class="image"><img src="../../../assets/images/ques.svg" alt=""></div>
-  <h3><a [routerLink]="['/question/'+item.id]">{{ item.title}}</a></h3>
-  <hr>
-  <p>Posted By : {{ item.postedBy}}</p>
-  <p>{{item.likes}} Likes  &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes  &nbsp; &nbsp; &nbsp;Add to Collection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; <a href="">See Answers</a></p>
-  
+    <div class="image">
+      <img src="../../../assets/images/ques.svg" alt="">
+    </div>
+    <h3>
+      <a [routerLink]="['/question/'+item.id]">{{ item.title}}</a>
+    </h3>
+    
+    <p>Posted By : {{ item.postedBy}}</p>
+    <p>{{item.likes}} Likes &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes &nbsp; &nbsp; &nbsp;Add to Collection
+     
+    </p>
+
   </div>
 
 
 </div>
-
-  
