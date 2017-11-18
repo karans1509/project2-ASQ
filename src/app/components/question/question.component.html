@@ -3,22 +3,32 @@
 <br> 
 <br>
 <br>
-<cl-image public-id="{{question.photo}}" >
-    <cl-transformation width="100" height="100" gravity="auto" radius="10"  crop="fill">
-    </cl-transformation>
-</cl-image>
+
 <h3 class="page-header">Question : {{ question.title }}</h3>
 <!-- <h3> {{ question.title }} </h3> -->
-<p> By : {{ question.postedBy}} </p>
-<p></p>
-<button (click) = "incrLikes()"  class="likes">Like  </button><p>{{question.likes}}</p>
-<button (click) = "decrLikes()"  class="dislikes">Dislike </button><p>{{question.dislikes}} </p>
-<h3>Answers -</h3>
+<p> <cl-image public-id="{{question.photo}}" >
+    <cl-transformation width="50" height="50" gravity="face" radius="10"  crop="thumb">
+    </cl-transformation>
+</cl-image>
+
+Posted By : {{ question.postedBy}} </p>
+
+<p>{{question.likes}}</p><button (click) = "incrLikes()"  class="likes">Likes  </button>
+<p>{{question.dislikes}} </p><button (click) = "decrLikes()"  class="dislikes">Dislikes</button>
+<a href="">Add to Collection</a>
+
+
 <div class="answers" *ngIf = "answers" class="answers">
   <div *ngFor = "let ans of answers, let i=index" class="single">
+      <div class="image">
+          <img src="../../../assets/images/ans.svg" alt="">
+        </div>
      <p>{{ans.postedBy}} : {{ ans.answer }}</p>
-     <button (click) = "incrVotes(i)" >Upvote</button><p>{{ans.upvotes}}</p>
-     <button (click) = "decrVotes(i)" >Downvote </button><p> {{ans.downvotes}} </p>
+     <br>
+     <div class="base">
+     <p>{{ans.upvotes}}</p><button (click) = "incrVotes(i)" >Upvote</button>
+     <p> {{ans.downvotes}} </p><button (click) = "decrVotes(i)" >Downvote </button>
+    </div>
   </div>
 </div>
 <form (submit) = "postAnswer()">

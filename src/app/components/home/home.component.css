@@ -3,22 +3,18 @@ div.home {
   max-width: 1200px;
   margin: 0 auto;
  text-align: center;
- background-color: #f7fafc
+ padding-top: 150px;
+ 
 }
 
 div.box{
 
-   max-width:200px;
-   height:200px;
-   border: 2.5px solid black;
-   border-radius: 15px;
-  margin: 0 auto;
-  background-color: yellow;
-  position: relative;
-  margin-bottom: -100px;
+   max-width:210px;
+   margin: 0 auto;
+   position: relative;
+   margin-bottom: -100px;
+  }
 
-   
-}
 
 button{
   margin:30px auto;
@@ -27,16 +23,23 @@ display: block;
   font-family: 'Open Sans', sans-serif;
 font-size: 15px;
 font-weight: 700;
-background:#0277bd;
-border: none;
+background:#db5461;
+border: 1px solid #db5461;
 border-radius: 15px;
+transition: 1s;
 }
 
 button:hover{
 
-color:#fff;
-background-color: #3592ca;
-border: 1px solid #0277bd;
+background-color:white;
+border: 1px solid #db5461;
+
+}
+
+button:hover a{
+
+  color:#db5461;
+
 }
 
 a{
@@ -47,9 +50,28 @@ a{
 
 div.content{
 
-  background-color: #fff;
-  
+  max-width: 800px;
+  background-color:white;
   padding-top:100px;
   padding-bottom: 30px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 15px rgb(29, 29, 29);
  
+}
+
+.content h1 {
+
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.content h2{
+
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+.content p{
+
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
 }

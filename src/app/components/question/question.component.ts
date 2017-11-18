@@ -21,9 +21,9 @@ export class QuestionComponent implements OnInit {
   down = [];
 
   constructor(private afAuth : AngularFireAuth, private router:Router, private firebaseService : FirebaseService, private route:ActivatedRoute) {
-    if(this.afAuth.auth.currentUser === null ){
-      this.router.navigate(['/']);
-    }
+    // if(this.afAuth.auth.currentUser === null ){
+    //   this.router.navigate(['/']);
+    // }
    }
 
   ngOnInit() {

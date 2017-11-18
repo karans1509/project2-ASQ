@@ -21,7 +21,7 @@ export class FirebaseService {
   subj2 = new Subject<any>();
 
   constructor(private db : AngularFireDatabase, private afAuth : AngularFireAuth) {
-    
+    this.questions = this.db.list('questions'); 
    }
   
   getQuestions(){

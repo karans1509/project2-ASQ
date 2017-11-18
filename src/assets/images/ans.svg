@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke: #ec4762;
+      }
+
+      .cls-2 {
+        stroke: #376a82;
+        stroke-width: 0.88px;
+      }
+
+      .cls-3 {
+        fill: #ec4762;
+      }
+    </style>
+  </defs>
+  <title>ans</title>
+  <circle class="cls-1" cx="16.5" cy="16.5" r="16"/>
+  <circle class="cls-2" cx="16.5" cy="16.5" r="14"/>
+  <polygon id="_Path_" data-name="&lt;Path&gt;" class="cls-3" points="8.01 25.83 10.64 25.83 16.58 9.51 22.51 25.83 25.14 25.83 18.28 6.48 14.88 6.48 8.01 25.83"/>
+</svg>

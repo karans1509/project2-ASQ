@@ -1,15 +1,17 @@
 <div class="home" *ngIf="(user | async)">
-  <!-- <cl-image public-id="{{profilePic}}" >
-    <cl-transformation width="100" height="100" gravity="auto" radius="15"  crop="fill">
-    </cl-transformation>
-    <cl-transformation dpr="2.0"></cl-transformation>
-  </cl-image> -->
+  
 
   <div class="box">
+
+    <cl-image public-id="{{profilePic}}" format="png">
+    <cl-transformation width="100" height="100" gravity="auto" radius="15" crop="fill">
+    </cl-transformation>
+    <cl-transformation dpr="2.0"></cl-transformation>
+  </cl-image>
   </div>
 
   <div class="content" *ngIf = "(user | async)">
-    <h1> Hi {{ name }}!</h1>
+    <h1> Hi!{{ name }}</h1>
     <h2>Welcome to ASQ!</h2>
     <p>Your favorite place to ask anything.</p>
 
