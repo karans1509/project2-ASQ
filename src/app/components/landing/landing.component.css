@@ -4,12 +4,11 @@
 .navbar{
 
     background-color:#db5461;
-    position: fixed;
     width:100%;
     top: 0;
     position: relative;
-    z-index: 3;
     margin-bottom: 0;
+
   
 }
 
@@ -22,7 +21,20 @@
 
 }
 
-li.logo{
+.container .navbar-right li{
+
+    padding-top:2px;
+    transition:1s;
+
+}
+
+.container .navbar-right li:hover a{
+
+    background-color: transparent;
+    color:black;
+}
+
+a.logo{
 
     width:80px;
     padding:10px 0 0 25px;
@@ -31,11 +43,11 @@ li.logo{
 }
 
 
-.navbar ul:last-of-type li:first-of-type,li:first-of-type+li{
+/*.navbar ul:last-of-type li:first-of-type,li:first-of-type+li{
 
     display: none;
     visibility: hidden;
-}
+}*/
 
 ul:first-of-type{
 
@@ -249,14 +261,14 @@ span.icon-menu{
         .navbar ul:last-of-type li:first-of-type,li:first-of-type+li{
             
                 display: inline-block;
-                visibility: visible;
+                /*visibility: visible;*/
             }
 
-        .navbar ul:last-of-type span{
+       /* .navbar ul:last-of-type span{
 
             display: none;
             visibility: hidden;
-        }
+        }*/
 
         .navbar ul:last-of-type li:first-of-type a,li:first-of-type+li a{
 

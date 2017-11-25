@@ -6,7 +6,7 @@
 	
 	width:100%;
 	height:100vh;
-	padding-top: 20px;
+	padding-top:20px;
 }
 
 .opaq{
@@ -18,8 +18,8 @@
 	  bottom:0;
 	  opacity: 0.5;
 	   position: absolute;
-		width:100%;
-		height: 100%;
+		width:100%;	
+		height:100%;
 		z-index:0;
 		
 	}

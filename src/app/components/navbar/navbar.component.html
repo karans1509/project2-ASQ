@@ -31,12 +31,11 @@
   </div>
 </nav>
 <popup (confirmClick)="onAddSubmit()" *ngIf = "(user | async)">
-    <h2 class="page-header">Post a Question here!</h2>
     <form>
       <div class="form-group">
         <input type="text" class="form-control" name="title" [(ngModel)]="title" required>  
         <select name="category" id="" [(ngModel)]="category"  required>
-          <option value="Campus" selected>Campus</option>
+          <option value="Campus">Campus</option>
           <option value="Books">Books</option>
           <option value="Registration">Registration</option>
           <option value="Sports">Sports</option>

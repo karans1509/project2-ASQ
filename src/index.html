@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>ASQ</title>
@@ -9,34 +10,65 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/icomoon/style.css">
   <link rel="stylesheet" href="https://bootswatch.com/3/cosmo/bootstrap.min.css">
+
+
   <script src="https://code.jquery.com/jquery-3.2.1.js" type="application/javascript"></script>
+
+
+  <script src="assets/bootstrap/js/bootstrap.js" type="application/javascript"></script>
+
   <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 </head>
+
 <body>
   <app-root></app-root>
 </body>
 <script type="text/javascript">  
-$(document).ready(function(){
-  // $('.change').css('display' , 'none');
+  $(document).ready(function () {
 
 
-  $('#upload_widget_opener').cloudinary_upload_widget(
-      { cloud_name: 'karan-cloud', upload_preset : 'jtdgexna', 
-        cropping: 'server'},
-        function(error, result) { 
-          console.log(error, result)
-          if(result) {
-            // $('.change').css('display' , 'block');
-            $('.cloudinary-button').css('display' , 'none');
-            // $('#profile').text(result[0].url);
-            $('#profile').text(result[0].public_id);
-            console.log(result[0].public_id);
-          }
-          $('.cloudinary-delete').click(()=>{
-            $('.cloudinary-button').css('display' , 'block');
-          }) 
-        });
-})
-      
+
+    $("button").click(function () {
+
+      console.log('clicked');
+      console.log($('.icon-heart').css('color'));
+
+      if ($(this).css('color') == 'white') {
+
+        $(this).css('color', '#db5461');
+      }
+
+      else {
+
+        $(this).css('color', '#fff');
+      }
+
+    })
+
+
+
+    $('#upload_widget_opener').cloudinary_upload_widget(
+      {
+        cloud_name: 'karan-cloud', upload_preset: 'jtdgexna',
+        cropping: 'server'
+      },
+      function (error, result) {
+        console.log(error, result)
+        if (result) {
+          // $('.change').css('display' , 'block');
+          $('.cloudinary-button').css('display', 'none');
+          // $('#profile').text(result[0].url);
+          $('#profile').text(result[0].public_id);
+          console.log(result[0].public_id);
+        }
+        $('.cloudinary-delete').click(() => {
+          $('.cloudinary-button').css('display', 'block');
+        })
+      });
+
+  })
+
 </script>
+
+
 </html>

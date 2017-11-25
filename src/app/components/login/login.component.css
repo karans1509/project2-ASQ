@@ -168,7 +168,7 @@
 		border-top-right-radius: 2px;
 	}
 	
-	.form-group[_ngcontent-c3]:last-of-type   input[_ngcontent-c3]{
+	.form-group:last-of-type input{
 	
 		border-bottom: 1px solid #DB5461;
 		border-bottom-left-radius:2px;

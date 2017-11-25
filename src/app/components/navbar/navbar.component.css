@@ -6,13 +6,10 @@
             
     }
 
-    .navbar-left{
-      
-        padding-left: 35px;
-       
-    }
+   .navbar-collapse{
 
-   
+         margin:0 30px;
+   }
 
 
     .navbar-nav>li{
@@ -26,7 +23,26 @@
     .navbar-nav>li a{
 
         color:white;
+        background-color:transparent;
 
+    }
+
+    .navbar-nav>li a:hover{
+
+        background-color:transparent;
+        color:#0D3B66;
+    }
+
+    .navbar-nav>li a:visited{
+      
+        background-color:transparent;
+
+    }
+
+    #navbar ul:last-child li:first-of-type {
+
+        background-color: transparent;
+        margin-left: 25px;
     }
 
     .navbar ul:first-child li:nth-of-type(3n){
@@ -35,26 +51,31 @@
         border-radius: 50px;
         margin-top: 10px;
         margin-left: 4px;
+        width:150px;
+        cursor: pointer;
        
     }
 
     .navbar ul:first-child li:nth-of-type(3n) a{
 
         padding: 5px 12px;
+        transition: .5s;
        
     }
 
 
     .navbar ul:first-child li:nth-of-type(3n):hover{
         
-                background-color: #ec4762;
-                
+                background-color:white;
+            
+              
                
             }
         
             .navbar ul:first-child li:nth-of-type(3n):hover a{
         
-               color: white;
+                color:#DB5461;
+                
                
             }
 
@@ -65,7 +86,10 @@
                         border: 1px solid white;
                         border-radius: 50px;
                         margin-top: 11px;
-                        margin-left: 25px;
+                        margin-left: 15px;
+                        transition: 0.5s;
+                        cursor: pointer;
+                        width:100px;
                        
                     }
                 
@@ -75,15 +99,39 @@
                        
                     }
 
+                    .navbar ul:last-child li:last-of-type:hover{
+
+                        background-color: white;
+                    }
+
+                    .navbar ul:last-child li:last-of-type:hover a{
+                        
+                                                color:#DB5461;
+                                            }
+
                     .navbar ul:last-child li:first-of-type{
 
                        background-color: #0D3B66;
+                       margin-top: 5px;
                     }
 .logo{
     width:90px;
     height:auto;
     padding:15px 15px;
-    
+}
 
- 
+popup{
+
+        
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+
+}
+
+.form-control{
+
+     margin-bottom: 15px;
+     height:70px;
+
 }

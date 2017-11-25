@@ -1,40 +1,51 @@
-<div *ngIf = "question" class="question">
-<a [routerLink]="['/questions']">Go Back</a>
-<br> 
-<br>
-<br>
+<div *ngIf="question" class="question">
+  <a [routerLink]="['/questions']">Go Back</a>
+  <br>
+  <br>
 
-<h3 class="page-header">Question : {{ question.title }}</h3>
-<!-- <h3> {{ question.title }} </h3> -->
-<p> <cl-image public-id="{{question.photo}}" >
-    <cl-transformation width="50" height="50" gravity="face" radius="10"  crop="thumb">
-    </cl-transformation>
-</cl-image>
+  <h3 class="page-header">Question : {{ question.title }}</h3>
+  <!-- <h3> {{ question.title }} </h3> -->
+  <p>
+    <cl-image public-id="{{question.photo}}">
+      <cl-transformation width="50" height="50" gravity="face" radius="10" crop="thumb">
+      </cl-transformation>
+    </cl-image>
 
-Posted By : {{ question.postedBy}} </p>
+    Posted By : {{ question.postedBy}} </p>
 
-<p>{{question.likes}}</p><button (click) = "incrLikes()"  class="likes">Likes  </button>
-<p>{{question.dislikes}} </p><button (click) = "decrLikes()"  class="dislikes">Dislikes</button>
-<a href="">Add to Collection</a>
+  <p>{{question.likes}}</p>
+  <!-- <span class="icon-heart likes" (click)="incrLikes()" ></span> -->
+  <button (click)="incrLikes()">Likes</button>
+
+  
+  <p>{{question.dislikes}} </p>
+  <!-- <span (click)="decrLikes()" class="icon-heart-broken dislikes"></span> -->
+  <button (click)="decrLikes()">Disikes</button>
+  <a href="">Add to Collection</a>
 
 
-<div class="answers" *ngIf = "answers" class="answers">
-  <div *ngFor = "let ans of answers, let i=index" class="single">
+  <div class="answers" *ngIf="answers" class="answers">
+    <div *ngFor="let ans of answers, let i=index" class="single">
       <div class="image">
-          <img src="../../../assets/images/ans.svg" alt="">
-        </div>
-     <p>{{ans.postedBy}} : {{ ans.answer }}</p>
-     <br>
-     <div class="base">
-     <p>{{ans.upvotes}}</p><button (click) = "incrVotes(i)" >Upvote</button>
-     <p> {{ans.downvotes}} </p><button (click) = "decrVotes(i)" >Downvote </button>
+        <img src="../../../assets/images/ans.svg" alt="">
+      </div>
+      <p>{{ans.postedBy}} : </p>
+      <p>{{ ans.answer }}</p>
+      <br>
+      <div class="base">
+        <p>{{ans.upvotes}}</p>
+        <span class="icon-arrow-up"></span>&nbsp;&nbsp;&nbsp;
+        <button (click)="incrVotes(i)">Upvote</button>
+        <p> {{ans.downvotes}} </p>
+        <span class="icon-arrow-down"></span>&nbsp;&nbsp;&nbsp;
+        <button (click)="decrVotes(i)">Downvote </button>
+      </div>
     </div>
   </div>
-</div>
-<form (submit) = "postAnswer()">
-  <div class="form-group"  >
-     <input type="text" class="form-control" name="newAnswer" [(ngModel)]="newAnswer"  required placeholder="Add an answer here...">
-  </div>
-  <input type="submit" value="Post" class="btn btn-default">
-</form>
+  <form (submit)="postAnswer()">
+    <div class="form-group">
+      <input type="text" class="form-control" name="newAnswer" [(ngModel)]="newAnswer" required placeholder="Add an answer here...">
+    </div>
+    <input type="submit" value="Post" class="btn btn-default">
+  </form>
 </div>

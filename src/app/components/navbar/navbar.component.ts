@@ -68,13 +68,14 @@ export class NavbarComponent implements OnInit {
 
   show() {
     this.popup.options = {
+      header: "Post a Question here",
       cancleBtnClass: "btn btn-default", 
       confirmBtnClass: "btn btn-default",
       animationDuration : 1.5,
       confirmBtnContent : "Submit",
       cancleBtnContent : "Cancel",
       animation : 'fadeInDown',
-      color: "#4180ab"}
+      color: "#26547C"}
       this.popup.show(this.popup.options);
   }
 
