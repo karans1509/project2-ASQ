@@ -24,10 +24,23 @@ export class FirebaseService {
     this.questions = this.db.list('questions'); 
    }
   
-  getQuestions(){
-   this.questionsRef = this.db.list('questions').snapshotChanges();
-   this.questions = this.db.list('questions');
-   return this.questionsRef;
+  getQuestions(category){
+    if(category == 'all') {
+      this.questionsRef = this.db.list('questions').snapshotChanges();
+      this.questions = this.db.list('questions');
+      return this.questionsRef;
+    }
+    else {
+      this.questionsRef = this.db.list('questions', ref => ref.orderByChild('category').equalTo(category)).snapshotChanges();
+      this.questions = this.db.list('questions');
+      return this.questionsRef;
+    }
+  }
+
+  getReplies(id){
+    let count = 0;
+    let ans = this.db.list('answers', ref=> ref.orderByChild('title').equalTo(id)).snapshotChanges();
+    return ans;
   }
 
   getQuestionDetails(id){

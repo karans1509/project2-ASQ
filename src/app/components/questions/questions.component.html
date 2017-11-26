@@ -4,15 +4,14 @@
   <div class="drop">
     <label for="">Category</label>
 
-    <select name="" id="">
-
-      <option value="">Campus</option>
-      <option value="">Books</option>
-      <option value="">Library</option>
-      <option value="">Admission</option>
-      <option value="">Food</option>
-      <option value="">Events</option>
-
+    <select name="category" id="" (change)="onSelect($event.target.value)" >
+      <option value="all">All</option>
+      <option value="Campus">Campus</option>
+      <option value="Books">Books</option>
+      <option value="Library">Library</option>
+      <option value="Admission">Admission</option>
+      <option value="Events">Events</option>
+      <option value="Sports">Sports</option>
     </select>
   </div>
 
@@ -35,8 +34,7 @@
     </h3>
     
     <p>Posted By : {{ item.postedBy}}</p>
-    <p>{{item.likes}} Likes &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes &nbsp; &nbsp; &nbsp;Add to Collection
-     
+    <p>{{item.likes}} Likes &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes &nbsp; &nbsp; &nbsp;Add to Collection &nbsp; &nbsp; &nbsp; {{item.replies}} Replies
     </p>
 
   </div>

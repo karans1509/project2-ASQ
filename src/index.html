@@ -28,7 +28,7 @@
 
 
 
-    $("button").click(function () {
+    $("button[_ngcontent-c4]").click(function () {
 
       console.log('clicked');
       console.log($('.icon-heart').css('color'));
@@ -39,13 +39,10 @@
       }
 
       else {
-
         $(this).css('color', '#fff');
       }
 
     })
-
-
 
     $('#upload_widget_opener').cloudinary_upload_widget(
       {
@@ -56,7 +53,7 @@
         console.log(error, result)
         if (result) {
           // $('.change').css('display' , 'block');
-          $('.cloudinary-button').css('display', 'none');
+          // $('.cloudinary-button').css('display', 'none');
           // $('#profile').text(result[0].url);
           $('#profile').text(result[0].public_id);
           console.log(result[0].public_id);

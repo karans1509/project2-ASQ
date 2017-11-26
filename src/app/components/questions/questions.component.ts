@@ -15,6 +15,8 @@ import { Subject } from 'rxjs/Subject';
 export class QuestionsComponent implements OnInit {
   questions = [];
   term: any;
+  category : string;
+  categories = ['Campus', 'Books', 'Library', 'Sports', 'Registration', 'Events'];
   user : Observable<firebase.User>;
 
   constructor(private firebaseService : FirebaseService, private afAuth: AngularFireAuth, private router: Router) { 
@@ -25,11 +27,34 @@ export class QuestionsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.firebaseService.getQuestions().subscribe(questions => {
+    this.category = 'all';
+    this.firebaseService.getQuestions(this.category).subscribe(questions => {
       this.questions = [];
       for(let i = questions.length -1 ; i >= 0 ; i--) {
-        let item = { id : '', postedBy : '' , title : '' , likes : 0 , dislikes : 0};
+        let item = { id : '', replies : 0, postedBy : '' , title : '' , likes : 0 , dislikes : 0};
         item.id = questions[i].key;
+        this.firebaseService.getReplies(item.id).subscribe(answers=>{
+          item.replies = answers.length;
+      });
+        item.postedBy = questions[i].payload.val().postedBy;
+        item.title = questions[i].payload.val().title;
+        item.likes = questions[i].payload.val().likes;
+        item.dislikes = questions[i].payload.val().dislikes;
+        this.questions.push(item);
+      }
+    })
+  }
+
+  onSelect(val) {
+    this.category = val;
+    this.firebaseService.getQuestions(this.category).subscribe(questions => {
+      this.questions = [];
+      for(let i = questions.length -1 ; i >= 0 ; i--) {
+        let item = { id : '', replies : 0, postedBy : '' , title : '' , likes : 0 , dislikes : 0};
+        item.id = questions[i].key;
+        this.firebaseService.getReplies(item.id).subscribe(answers=>{
+          item.replies = answers.length;
+      });
         item.postedBy = questions[i].payload.val().postedBy;
         item.title = questions[i].payload.val().title;
         item.likes = questions[i].payload.val().likes;

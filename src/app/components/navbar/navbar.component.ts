@@ -59,7 +59,7 @@ export class NavbarComponent implements OnInit {
     this.afAuth.auth.signOut().then(()=>{
       console.log("Signed Out");
       // this.flashMessage.show("You are logged out", {cssClass: 'alert-success', timeOut : 3000});
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
     })
     .catch((error)=>{
       console.log(error);

@@ -11,12 +11,12 @@
   </div>
 
   <div class="content" *ngIf = "(user | async)">
-    <h1> Hi!{{ name }}</h1>
+    <h1> Hi! {{ name }}</h1>
     <h2>Welcome to ASQ!</h2>
     <p>Your favorite place to ask anything.</p>
 
     <button type="submit" class="btn btn-default">
-      <a [routerLink]="['/login']">Get Started</a>
+      <a [routerLink]="['/questions']">Get Started</a>
     </button>
 
   </div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-question',
@@ -10,6 +12,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class QuestionComponent implements OnInit {
   id : any;
+  user : Observable<firebase.User>;
   answerKey = [];
   question:Question;
   answers = [];
@@ -24,6 +27,8 @@ export class QuestionComponent implements OnInit {
     // if(this.afAuth.auth.currentUser === null ){
     //   this.router.navigate(['/']);
     // }
+    
+      this.user = this.afAuth.authState;
    }
 
   ngOnInit() {
@@ -48,7 +53,7 @@ export class QuestionComponent implements OnInit {
       this.up = [];
       this.down = [];
       for(let i = 0 ; i<answers.length ; i++) {
-        if( answers[i].payload.val().title == this.title ) {
+        if( answers[i].payload.val().title == this.id ) {
           let item = { answer : '', postedBy : '' , title : '', upvotes : 0 , downvotes : 0};
           this.answerKey.push(answers[i].key);
           item.answer = answers[i].payload.val().answer;
@@ -66,7 +71,7 @@ export class QuestionComponent implements OnInit {
 
   postAnswer() {
     let ans = { answer : this.newAnswer, postedBy : this.afAuth.auth.currentUser.displayName ,
-    title : this.title, upvotes : 0, downvotes : 0 }
+    title : this.id, upvotes : 0, downvotes : 0 }
     this.firebaseService.newAnswers(ans);
     this.newAnswer = "";
     // this.router.navigate(['question/'+this.route.snapshot.params['id']]);
