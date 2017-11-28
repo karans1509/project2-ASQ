@@ -18,6 +18,7 @@ export class QuestionsComponent implements OnInit {
   category : string;
   categories = ['Campus', 'Books', 'Library', 'Sports', 'Registration', 'Events'];
   user : Observable<firebase.User>;
+  p : number = 1;
 
   constructor(private firebaseService : FirebaseService, private afAuth: AngularFireAuth, private router: Router) { 
     // if(this.afAuth.auth.currentUser === null) {

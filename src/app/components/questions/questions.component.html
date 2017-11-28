@@ -4,7 +4,7 @@
   <div class="drop">
     <label for="">Category</label>
 
-    <select name="category" id="" (change)="onSelect($event.target.value)" >
+    <select name="category" id="" (change)="onSelect($event.target.value)">
       <option value="all">All</option>
       <option value="Campus">Campus</option>
       <option value="Books">Books</option>
@@ -15,29 +15,22 @@
     </select>
   </div>
 
-  <!-- <div class="top">
-
-   <div class="topa"><a href="">My Collection</a></div>
-    <br>
-    <div class="topa"><a href="">My questions</a></div>
-    <br>
-
-  </div> -->
-
-
-  <div class="main" *ngFor="let item of questions | filter:term">
-    <div class="image">
-      <img src="../../../assets/images/ques.svg" alt="">
+  <div class="main" *ngFor="let item of questions | filter:term | paginate : { itemsPerPage : 5, currentPage:p }">
+    <div class="block">
+      <div class="image">
+        <img src="../../../assets/images/ques.svg" alt="">
+      </div>
+      <h3>
+        <a [routerLink]="['/question/'+item.id]">{{ item.title}}</a>
+      </h3>
     </div>
-    <h3>
-      <a [routerLink]="['/question/'+item.id]">{{ item.title}}</a>
-    </h3>
-    
-    <p>Posted By : {{ item.postedBy}}</p>
-    <p>{{item.likes}} Likes &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes &nbsp; &nbsp; &nbsp;Add to Collection &nbsp; &nbsp; &nbsp; {{item.replies}} Replies
-    </p>
 
+    <p>Posted By : {{ item.postedBy}}</p>
+    <p>{{item.likes}} Likes &nbsp; &nbsp; &nbsp;{{item.dislikes}} Dislikes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{item.replies}}
+      Replies
+    </p>
   </div>
+  <pagination-controls (pageChange)="p = $event" style=" text-align : center " ></pagination-controls>
 
 
 </div>

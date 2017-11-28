@@ -22,6 +22,11 @@ export class QuestionComponent implements OnInit {
   dislikes : any;
   up = [];
   down = [];
+  count = 0;
+  count2 = 0;
+  count3 = 0;
+  count4 = 0;
+  p : number = 1;
 
   constructor(private afAuth : AngularFireAuth, private router:Router, private firebaseService : FirebaseService, private route:ActivatedRoute) {
     // if(this.afAuth.auth.currentUser === null ){
@@ -78,27 +83,50 @@ export class QuestionComponent implements OnInit {
   }
   
   incrLikes() {
-    this.likes = this.likes + 1;
-    this.firebaseService.updateLikes(this.id , this.likes);
+    this.count++;
+    if(this.count % 2 != 0) {
+      this.likes = this.likes + 1;
+      this.firebaseService.updateLikes(this.id , this.likes);
+    }
+    else {
+      this.likes = this.likes - 1;
+      this.firebaseService.updateLikes(this.id , this.likes);
+    }
   }
   
   decrLikes() {
-    this.dislikes = this.dislikes - 1;
+    this.count2++;
+    if(this.count2 % 2 != 0) {
+      this.dislikes = this.dislikes - 1;
+    }
+    else {
+      this.dislikes = this.dislikes + 1;
+    }
+    
     this.firebaseService.updateDislikes(this.id , this.dislikes);
   }
 
   incrVotes (index) {
-    console.log(index);
-    this.up[index] = this.up[index] + 1;
-    console.log(this.up[index]);
+    this.count3++;
+    if(this.count3 %2 !=0) {
+      this.up[index] = this.up[index] + 1;
+    }
+    else {
+      this.up[index] = this.up[index] - 1;
+    }
     this.firebaseService.updateUpvotes(this.answerKey[index], this.up[index]);
   }
 
   decrVotes (index) {
-    this.down[index] = this.down[index] - 1;
+    this.count4++;
+    if(this.count4 %2 != 0) {
+      this.down[index] = this.down[index] - 1;
+    }
+    else {
+      this.down[index] = this.down[index] + 1;
+    }
     this.firebaseService.updateDownvotes(this.answerKey[index], this.down[index]);
   }
-
 }
 
 interface Question {

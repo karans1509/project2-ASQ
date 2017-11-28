@@ -1,10 +1,7 @@
 <div *ngIf="question" class="question">
-  <a [routerLink]="['/questions']">Go Back</a>
   <br>
   <br>
-
   <h3 class="page-header">Question : {{ question.title }}</h3>
-  <!-- <h3> {{ question.title }} </h3> -->
   <p>
     <cl-image public-id="{{question.photo}}">
       <cl-transformation width="50" height="50" gravity="face" radius="10" crop="thumb">
@@ -14,18 +11,14 @@
     Posted By : {{ question.postedBy}} </p>
 
   <p>{{question.likes}}</p>
-  <!-- <span class="icon-heart likes" (click)="incrLikes()" ></span> -->
-  <button (click)="incrLikes()">Likes</button>
+  <button type="button" class="" data-toggle="button" aria-pressed="false" autocomplete="off"  (click)="incrLikes()">Like</button>
 
   
   <p>{{question.dislikes}} </p>
-  <!-- <span (click)="decrLikes()" class="icon-heart-broken dislikes"></span> -->
-  <button (click)="decrLikes()">Disikes</button>
-  <a href="">Add to Collection</a>
-
+  <button (click)="decrLikes()">Dislike</button>
 
   <div class="answers" *ngIf="answers" class="answers">
-    <div *ngFor="let ans of answers, let i=index" class="single">
+    <div *ngFor="let ans of answers | paginate: { itemsPerPage: 5, currentPage: p }, let i=index " class="single">
       <div class="image">
         <img src="../../../assets/images/ans.svg" alt="">
       </div>
@@ -34,13 +27,15 @@
       <br>
       <div class="base">
         <p>{{ans.upvotes}}</p>
-        <span class="icon-arrow-up"></span>&nbsp;&nbsp;&nbsp;
-        <button (click)="incrVotes(i)">Upvote</button>
+        <mat-button-toggle><span (click)="incrVotes(i)" role="button" class="icon-arrow-up"></span></mat-button-toggle>&nbsp;&nbsp;&nbsp;
+        <!-- <span (click)="incrVotes(i)" role="button" class="icon-arrow-up"></span> -->
         <p> {{ans.downvotes}} </p>
-        <span class="icon-arrow-down"></span>&nbsp;&nbsp;&nbsp;
-        <button (click)="decrVotes(i)">Downvote </button>
+        <mat-button-toggle><span class="icon-arrow-down" role="button" (click)="decrVotes(i)"></span></mat-button-toggle>&nbsp;&nbsp;&nbsp;
+        <!-- <button (click)="decrVotes(i)">Downvote </button> -->
       </div>
+      
     </div>
+    
   </div>
   <form (submit)="postAnswer()">
     <div class="form-group">
@@ -48,4 +43,5 @@
     </div>
     <input type="submit" value="Post" class="btn btn-default">
   </form>
+  <pagination-controls (pageChange)="p = $event" style=" text-align : center; padding-top : 20px"></pagination-controls>
 </div>

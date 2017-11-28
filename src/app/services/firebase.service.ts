@@ -3,6 +3,8 @@ import { AngularFireDatabase, AngularFireAction } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import 'firebase/storage';
+import { FirebaseApp} from 'angularfire2';
 import { Subject } from 'rxjs/Subject';
 import { forEach } from '@angular/router/src/utils/collection';
 
@@ -20,8 +22,29 @@ export class FirebaseService {
   subj = new Subject<any>();
   subj2 = new Subject<any>();
 
+  folder : any;
+
   constructor(private db : AngularFireDatabase, private afAuth : AngularFireAuth) {
     this.questions = this.db.list('questions'); 
+    this.folder = 'profileimages';
+   }
+
+   addImage() : string {
+    let storageRef = firebase.storage().ref();
+    let picPath;
+    for(let selectedFile of [(<HTMLInputElement>document.getElementById('image')).files[0]]) {
+      console.log(selectedFile.name);
+      let path = "/"+selectedFile.name;
+      console.log(path);
+      let iRef = storageRef.child(path);
+      iRef.put(selectedFile).then((snapshot) => {
+        picPath = path;
+        console.log(picPath);
+      }).catch((err)=>{
+        console.log(err);
+      })
+    }
+    return picPath;
    }
   
   getQuestions(category){

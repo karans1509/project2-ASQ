@@ -8,13 +8,18 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
-import { FlashMessagesModule } from 'angular2-flash-messages'; 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import {NgxPaginationModule} from 'ngx-pagination';
+import 'firebase/storage';
+
 //import * as cloudinary from 'cloudinary-core';
 import { Cloudinary } from 'cloudinary-core';
 import { CloudinaryModule } from '@cloudinary/angular-4.x';
 import cloudinaryConfiguration from './config';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PopupModule } from 'ng2-opd-popup';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
  
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,6 +30,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { QuestionComponent } from './components/question/question.component';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   { path:'', component:LandingComponent },
@@ -50,7 +56,8 @@ export const cloudinaryLib = {
     NavbarComponent,
     QuestionComponent,
     PostQuestionComponent,
-    LandingComponent
+    LandingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,10 @@ export const cloudinaryLib = {
     cloud_name: 'karan-cloud',
     upload_preset : 'jtdgexna'}),
     Ng2SearchPipeModule,
-    PopupModule.forRoot()
+    PopupModule.forRoot(),
+    BrowserAnimationsModule,
+    NgxPaginationModule,
+    MatButtonToggleModule
   ],
   providers: [FirebaseService], 
   bootstrap: [AppComponent]

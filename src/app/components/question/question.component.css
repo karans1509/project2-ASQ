@@ -9,11 +9,12 @@
 
 .question{
 
-    padding-bottom: 15px;
+    padding-bottom: 100px;
     padding-top: 75px;
     max-width:100%;
     height:100%;
     margin: 0 auto;  
+
 }
 
 .question p:first-of-type{
@@ -62,15 +63,14 @@ button:hover{
 
 .question p:nth-of-type(3n){
     
-        display: inline-block;
-        font-family: 'Nunito', sans-serif;
-        padding-right:5px;
-        margin-right: 8px;
-        border-right: 1px solid white;
-        color:white;
-        padding-right: 10px;
-        font-size: 1.25rem;
-        
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    padding-right:5px;
+    margin-right: 8px;
+    border-right: 1px solid white;
+    color:white;
+    padding-right: 10px;
+    font-size: 1.25rem; 
     }
 
     a:first-of-type{
@@ -99,7 +99,7 @@ button:hover{
             margin: 0 auto;
             max-width: 80%;
             margin-top:40px;
-            box-shadow: 5px 5px 15px rgb(29, 29, 29);
+            box-shadow: 0px 5px 10px rgb(29, 29, 29);
             padding:0 15px;
            
             
@@ -128,16 +128,14 @@ button:hover{
 
         .question .single p:first-of-type+p{
             
-                        color :black;
-                        display: inline;
-                        margin-left: 0;
-                        word-wrap: break-word;
-                        font-family: 'Nunito', sans-serif;
-                        font-size: 1.55rem;
-                        font-weight: 600;
-                        
-                       
-                    }
+            color :black;
+            display: inline;
+            margin-left: 0;
+            word-wrap: break-word;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 600;     
+          }
 
         .single button:first-of-type{
 
@@ -146,35 +144,33 @@ button:hover{
             color:white;
             margin-left: 0px;
             font-size: 1rem;
-          
         }
 
         .single button:last-of-type{
 
-            display: inline-block;
-            border:1px solid white;
-            color:white;
-            font-size: 1rem;
+        display: inline-block;
+        border:1px solid white;
+        color:white;
+        font-size: 1rem;
         }
 
         .question .single .base p:first-of-type{
 
-            display:inline-block;
-            font-size: 1.25rem;
-            color:white;
-            font-family: 'Nunito', sans-serif;
-            margin-left:25px;
-            border-right:1px solid white;
-            margin-right: 0;
-            padding-right: 5px;
+        display:inline-block;
+        font-size: 1.25rem;
+        color:white;
+        font-family: 'Nunito', sans-serif;
+        margin-left:25px;
+        border-right:1px solid white;
+        margin-right: 0;
+        padding-right: 5px;
            
            
         }
 
         .base p:last-of-type{
-
-            margin-left: 0;
-            margin-right: 0;
+        margin-left: 0;
+        margin-right: 0;
         }
 
       span.icon-heart{
@@ -189,32 +185,52 @@ button:hover{
 
       span.icon-heart-broken{
 
-        color: #db5461;
-        margin-right: 50px;
-        font-size: 1.85rem;
+    color: #db5461;
+    margin-right: 50px;
+    font-size: 1.85rem;
       }
 
-      span.icon-arrow-up{
+    span.icon-arrow-up{
         
-              color:white;
-              font-size: 1.85rem;
-              }
+    color:white;
+    font-size: 1.85rem;
+    display: block;
+    }
+  
+    span.icon-arrow-down{  
+    color:white;
+    font-size: 1.85rem;
+    display: block;
+    }
+
+    span:hover {
+        /* color :black; */
+    }
+    .mat-button-toggle {
+        background-color: #db5461;
+        border: none;
+        box-shadow: none;
+        color: #fff;
         
-              span.icon-arrow-down{
-        
-                color:white;
-                font-size: 1.85rem;
-              }
+    }
 
+    .mat-button-toggle-checked {
+        background-color: #fff;
+    }
+    .mat-button-toggle-checked span{
+        background-color: #fff;
+        color: #db5461;
+    }
 
-        .single .base{
+    .single .base{
 
-            background-color:#db5461;
-            margin-top: 20px;
-            padding-top: 10px;
-            margin-left:-15px;
-            margin-right: -15px;
-        }
+    background-color:#db5461;
+    margin-top: 20px;
+    padding-top: 10px;
+    margin-left:-15px;
+    margin-right: -15px;
+
+    }
 
         form{
 
@@ -265,8 +281,8 @@ button:hover{
 
             .question p:first-of-type+p{
                 
-                                margin-left: 225px;
-                            }
+                 margin-left: 225px;
+             }
         
             .single,form{
 

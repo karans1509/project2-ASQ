@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
       // creating new user
       this.afAuth.auth.createUserWithEmailAndPassword(this.email,this.password).then(value =>{
         let url = document.getElementById('profile');
-
+        
         // updating name and photo
         this.afAuth.auth.currentUser.updateProfile({
           displayName: this.first + ' ' + this.last ,
