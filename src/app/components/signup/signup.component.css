@@ -91,10 +91,6 @@
 	margin: 0 auto;
 }
 
-.form-group:last-of-type {
-
-	/*margin: 0 auto;*/
-}
 
 #profile {
 	opacity: 0;
@@ -177,7 +173,7 @@ button:last-of-type:hover a {
 	border-top-right-radius: 2px;
 }
 
-.form-group[_ngcontent-c3]:nth-of-type(4n) input{
+.form-group:nth-of-type(4n) input{
 
 	border-bottom: 1px solid #DB5461;
 	border-bottom-left-radius:2px;
