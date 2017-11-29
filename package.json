@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "webpack": "webpack --progress"
+    "webpack": "webpack --progress",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -48,7 +49,7 @@
     "typings": "^2.1.1",
     "url-loader": "^0.6.2",
     "zone.js": "^0.8.14",
-    "angularfire2":"5.0.0-rc.2"
+    "angularfire2": "5.0.0-rc.2"
   },
   "devDependencies": {
     "@angular/language-service": "^4.2.4",
